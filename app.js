@@ -762,6 +762,20 @@ function renderTiempo() {
   `;
 }
 
+function registrarTiempoTrabajo(){
+  const actividad = document.getElementById('actividadTrabajo').value;
+
+  if(!actividad){
+    alert('Seleccioná una actividad antes de registrar.');
+    return;
+  }
+
+  alert('✅ Tiempo de trabajo registrado para la actividad: ' + actividad);
+}
+
+
+
+
 function renderReportes() {
   document.getElementById("view-reportes").innerHTML = `
     <div class="card">
@@ -770,7 +784,7 @@ function renderReportes() {
       <div class="grid form-grid">
         <select><option>Todos los lotes</option><option>Lote A3</option><option>Lote B2</option></select>
         <input type="date">
-        <select><option>PDF simulado TXT</option><option>Excel simulado CSV</option></select>
+        <select><option>PDF</option><option>Excel</option></select>
         <button onclick="generarReporte()">Generar y descargar reporte</button>
       </div>
     </div>

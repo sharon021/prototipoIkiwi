@@ -3,6 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IKIWI | Plataforma de Produccion, Empaque y Comercializacion de kiwis </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="login" class="login-screen">
+    <div class="login-card">
+      <div class="brand">
+        <span><img src="img/logo-ikiwi.png" alt="Logo IKIWI" class="logo"></span>
+        <div><h1>IKIWI</h1><p>Plataforma de Produccion, Empaque y Comercializacion de kiwis</p></div>
+      </div>
+
+      <div class="tabs-auth">
+        <button id="tabLogin" class="tab active" type="button">Iniciar sesión</button>
+        <button id="tabRegister" class="tab" type="button">Crear cuenta</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <h2>Ingreso a la plataforma</h2>
+        <p class="muted">Ingresá con mail institucional y la contraseña</p>
+        <label for="loginEmail">Mail institucional</label>
+        <input id="loginEmail" type="email" placeholder="usuario@ikiwi.com" required />
+        <label for="loginPassword">Contraseña</label>
+        <input id="loginPassword" type="password" placeholder="Ingresá tu contraseña" required />
+        <p id="loginError" class="error hidden"></p>
+        
+        <button type="submit">Iniciar sesión</button>
+       
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <h2>Crear cuenta</h2>
+        <p class="muted">Solo se aceptan correos institucionales de IKIWI.</p>
+        <label for="registerName">Nombre y apellido</label>
+        <input id="registerName" placeholder="Ej: Pedro Pérez" required />
+        <label for="registerEmail">Mail institucional</label>
+        <input id="registerEmail" type="email" placeholder="nombre.apellido@ikiwi.com" required />
+        <label for="registerPassword">Contraseña</label>
+        <input id="registerPassword" type="password" placeholder="Mínimo 8, mayúscula, minúscula y especial" required />
+        <ul class="password-rules">
+          <li id="ruleLength">Mínimo 8 caracteres</li>
+          <li id="ruleUpper">Al menos una mayúscula</li>
+          <li id="ruleLower">Al menos una minúscula</li>
+          <li id="ruleSpecial">Al menos un carácter especial</li>
+        </ul>
+        <label for="registerRole">Rol que cumple</label>
+        <select id="registerRole" required>
+          <option value="socios">Socios/ Accionistas</option>
+          <option value="capataz">Capataz de Campo</option>
+          <option value="agronomo">Técnico Agrónomo</option>
+          <option value="operario">Operario Agrícola</option>
+          <option value="administrativo">Personal Administrativo</option>
+          <option value="contable">Personal Contable</option>
+        </select>
+        <p id="registerError" class="error hidden"></p>
+        <p id="registerSuccess" class="success hidden"></p>
+        <button type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </section>
+
+  <main id="app" class="hidden">
+    <aside class="sidebar">
+      <div class="brand small"><span><img src="img/logo-ikiwi.png" alt="Logo IKIWI" class="logo"></span><div><h1>IKIWI</h1><p id="roleName"></p></div></div>
+      <nav id="menu"></nav>
+      <button class="logout" onclick="logout()">Cerrar sesión</button>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <div><h2 id="pageTitle">Tablero General</h2><p id="welcome"></p></div>
+        <div class="status"><span id="syncDot"></span><span id="syncText">Sincronizado</span></div>
+      </header>
+
+      <section id="view-dashboard" class="view"></section>
+      <section id="view-drones" class="view hidden"></section>
+      <section id="view-plagas" class="view hidden"></section>
+      <section id="view-floracion" class="view hidden"></section>
+      <section id="view-agroquimicos" class="view hidden"></section>
+      <section id="view-lotes" class="view hidden"></section>
+      <section id="view-tiempo" class="view hidden"></section>
+      <section id="view-reportes" class="view hidden"></section>
+      <section id="view-decisiones" class="view hidden"></section>
+      <section id="view-admin" class="view hidden"></section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IKIWI | Plataforma de Producción, Empaque y Comercialización de Kiwi</title>
   <link rel="stylesheet" href="style.css" />
 </head>

@@ -663,117 +663,27 @@ function renderLotes() {
 }
 
 function renderTiempo() {
-  document.getElementById('view-tiempo').innerHTML = `
+  document.getElementById("view-tiempo").innerHTML = `
     <div class="grid two">
       <div class="card">
         <h3>Registrar tiempo de trabajo en campo</h3>
-
         <div class="grid form-grid">
           <input placeholder="Operario" value="Operario 01">
-
-          <select id="actividadTrabajo">
-            <option value="">Seleccionar actividad</option>
-            <option>Poda</option>
-            <option>Atada</option>
-            <option>Despunte</option>
-            <option>Raleo previo a polinización</option>
-            <option>Polinización</option>
-            <option>Raleo post polinización</option>
-            <option>Poda en verde</option>
-            <option>Cosecha</option>
-            <option>Aplicación de agroquímicos</option>
-            <option>Monitoreo de riego</option>
-            <option>Control de maleza</option>
-            <option>Control de heladas</option>
-            <option>Combustible utilizado</option>
-          </select>
-
-          <select>
-            <option>Lote A3</option>
-            <option>Lote B2</option>
-            <option>Lote C1</option>
-            <option>Lote D4</option>
-          </select>
-
-          <input type="number" placeholder="Horas trabajadas" value="3" min="1">
-
-          <input type="date">
-
-          <textarea placeholder="Observaciones">Actividad realizada sin inconvenientes.</textarea>
-
-          <button onclick="registrarTiempoTrabajo()">Registrar</button>
+          <select><option>Monitoreo terrestre</option><option>Soporte dron</option><option>Aplicación agroquímicos</option></select>
+          <input type="number" placeholder="Horas" value="3">
+          <button onclick="fakeSave('Tiempo de trabajo registrado')">Registrar</button>
         </div>
       </div>
 
       <div class="card">
         <h3>Indicadores operativos</h3>
-        <div class="kpi-line"><b>Horas terrestres registradas</b><span>128 hs</span></div>
-        <div class="kpi-line"><b>Combustible utilizado</b><span>120 L</span></div>
-        <div class="kpi-line"><b>Actividades cargadas</b><span>13</span></div>
-        <div class="kpi-line"><b>Cobertura operativa</b><span>96%</span></div>
+        <div class="kpi-line"><b>Horas terrestres evitadas</b><span>36 hs</span></div>
+        <div class="kpi-line"><b>Combustible estimado ahorrado</b><span>120 L</span></div>
+        <div class="kpi-line"><b>Cobertura por dron</b><span>96%</span></div>
       </div>
-    </div>
-
-    <div class="card">
-      <h3>Últimos registros de trabajo</h3>
-      <table>
-        <tr>
-          <th>Fecha</th>
-          <th>Operario</th>
-          <th>Actividad</th>
-          <th>Lote</th>
-          <th>Horas</th>
-          <th>Estado</th>
-        </tr>
-        <tr>
-          <td>26/05/2026</td>
-          <td>Operario 01</td>
-          <td>Poda</td>
-          <td>A3</td>
-          <td>3 hs</td>
-          <td><span class="tag ok">Registrado</span></td>
-        </tr>
-        <tr>
-          <td>26/05/2026</td>
-          <td>Operario 02</td>
-          <td>Monitoreo de riego</td>
-          <td>B2</td>
-          <td>2 hs</td>
-          <td><span class="tag ok">Registrado</span></td>
-        </tr>
-        <tr>
-          <td>25/05/2026</td>
-          <td>Operario 03</td>
-          <td>Control de heladas</td>
-          <td>C1</td>
-          <td>4 hs</td>
-          <td><span class="tag warn">Revisar</span></td>
-        </tr>
-        <tr>
-          <td>25/05/2026</td>
-          <td>Capataz 01</td>
-          <td>Combustible utilizado</td>
-          <td>General</td>
-          <td>1 hs</td>
-          <td><span class="tag ok">Registrado</span></td>
-        </tr>
-      </table>
     </div>
   `;
 }
-function registrarTiempoTrabajo(){
-  const actividad = document.getElementById('actividadTrabajo').value;
-
-  if(!actividad){
-    alert('Seleccioná una actividad antes de registrar.');
-    return;
-  }
-
-  alert('✅ Tiempo de trabajo registrado para la actividad: ' + actividad);
-}
-
-
-
 
 function renderReportes() {
   document.getElementById("view-reportes").innerHTML = `

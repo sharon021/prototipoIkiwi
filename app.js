@@ -566,6 +566,7 @@ function renderFloracion(){
             <th>Recomendación</th>
           </tr>
 
+          
           <tr>
             <td>A3</td>
             <td>IMG-A3-0526.jpg</td>

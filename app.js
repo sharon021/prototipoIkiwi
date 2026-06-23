@@ -556,8 +556,7 @@ function renderFloracion(){
     <div class="grid two">
       <div class="card">
         <h3>Floración detectada por imágenes del dron</h3>
-        <p>El sistema analiza las imágenes capturadas por el dron y estima automáticamente el porcentaje de apertura floral por lote.</p>
-
+       
         <table>
           <tr>
             <th>Lote</th>
